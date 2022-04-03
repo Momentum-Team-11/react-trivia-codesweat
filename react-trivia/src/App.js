@@ -5,8 +5,7 @@ import Question from "./Question";
 
 const App = () => {
   const categoriesURL = "https://opentdb.com/api_category.php";
-  const questionsURL =
-    "https://opentdb.com/api.php?amount=10&type=boolean&category=";
+  const questionsURL = "https://opentdb.com/api.php?amount=10&type=boolean&category=";
   const [categories, setCategories] = useState([]);
   const [selected, setSelected] = useState(null);
   const [questions, setQuestions] = useState([]);
@@ -31,7 +30,7 @@ const App = () => {
   }, [selected]);
 
   if (endGame) {
-    return `Well done! Your score is: ${score}`;
+    return `Well done! Your score is: ${score} out of ${questions.length}!`;
   }
 
   return (
@@ -40,7 +39,6 @@ const App = () => {
     <div id="container">
       {questions.length > 0 ? (
         <div>
-          
           {questions.map((question, idx) => {
             return (
               <Question
