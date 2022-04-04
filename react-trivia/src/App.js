@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CategorySelect from "./CategorySelect";
 import Question from "./Question";
+import "./index.css";
 
 const App = () => {
   const categoriesURL = "https://opentdb.com/api_category.php";
@@ -33,21 +34,25 @@ const App = () => {
 
   if (endGame) {
     return (
-      <div>
+      <div id="done">
         <p>
-          Well done! Your score is: {score} out of {questions.length}!
+          Game over! Your score is: {score} out of {questions.length}!
         </p>
+        <p>Would you like to play again?</p>
         <button onClick={() => {console.log('play again clicked!'); setEndGame(false); setPlayAgain(true); setQuestions([]); setScore(0)}}>Play Again</button>
       </div>
     );
   }
   if (score === 0 && playAgain || endGame === false) {
   return (
+  
     // Ternary operator syntax
     // condition ? what to do if true : what to do if false
     <div id="container">
+
       {questions.length > 0 ? (
-        <div>
+        <div class="button">
+          <p>The following statements are either 'true' or 'false'...</p>
           {questions.map((question, idx) => {
             return (
               <Question
@@ -75,15 +80,5 @@ const App = () => {
   )};
   return null
 };
-
-// if (playAgain) {
-//   console.log('play again clicked!')
-//     return (
-//       <div id="replay">
-//         <button onClick={() => setPlayAgain(true)}>Play Again</button>
-//         </div>
-// )};
-
-// );
 
 export default App;
