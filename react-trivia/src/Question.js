@@ -5,7 +5,7 @@ const Question = ({ question, setScore, score }) => {
   return (
     <div>
       <p>{question.question}</p>
-      <button
+      <button class="button5"
         disabled={isAnswered}
         onClick={() => {
           console.log("correct answer selected!");
@@ -15,7 +15,7 @@ const Question = ({ question, setScore, score }) => {
       >
         {question.correct_answer}
       </button>
-      <button
+      <button class="button5"
         disabled={isAnswered}
         onClick={() => {
           console.log("correct answer selected!");

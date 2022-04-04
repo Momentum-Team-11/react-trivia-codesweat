@@ -39,7 +39,7 @@ const App = () => {
           Game over! Your score is: {score} out of {questions.length}!
         </p>
         <p>Would you like to play again?</p>
-        <button onClick={() => {console.log('play again clicked!'); setEndGame(false); setPlayAgain(true); setQuestions([]); setScore(0)}}>Play Again</button>
+        <button class="button5" onClick={() => {console.log('play again clicked!'); setEndGame(false); setPlayAgain(true); setQuestions([]); setScore(0)}}>Play Again</button>
       </div>
     );
   }
@@ -49,10 +49,12 @@ const App = () => {
     // Ternary operator syntax
     // condition ? what to do if true : what to do if false
     <div id="container">
-
+<p>To test your knowledge of randomly random things, please choose a category below...at random...</p>
+  
       {questions.length > 0 ? (
-        <div class="button">
+        <div>
           <p>The following statements are either 'true' or 'false'...</p>
+          
           {questions.map((question, idx) => {
             return (
               <Question
@@ -63,7 +65,7 @@ const App = () => {
               />
             );
           })}
-          <button onClick={() => setEndGame(true)}>Finish Game</button>
+          <button class="button" onClick={() => setEndGame(true)}>Finish Game</button>
         </div>
       ) : (
         categories.map((category) => {
@@ -74,6 +76,7 @@ const App = () => {
               setSelected={setSelected}
             />
           );
+          
         })
       )}
     </div>

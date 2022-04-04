@@ -8,23 +8,101 @@ p {
   font-family:fantasy, Georgia, 'Times New Roman', Times, serif;
   font-size:larger;
   font-weight:bold;
-  color: rgb(54, 30, 8);
+  color: rgb(11, 11, 10);
 }
-#container {
+
+.container {
   margin: 5;
   padding: 5;
   color:dimgray
-}
-.button {
-  margin: 5;
-  padding: 5;
-  color:rgb(8, 100, 59)
+  
 }
 
-#done{
+.box{
+margin: 5;
+padding: 5;
+color:dimgray
+}
+
+.button {
+  border-radius: 12px;
+  background-color: rgba(201, 167, 169, 0.469);
+  color: rgb(91, 23, 23);
+  float: left;
+  font-family: fantasy;
+  text-align: center;
+  text-align: justify;
+  align-content: center;
+  text-decoration:wavy;
+  /* display: inline-block; */
+  font-size: 16px;
+  margin: 5px 2px;
+  cursor:pointer;
+  transition-timing-function: ease;
+}
+.button:hover {
+  border: none;
+  border-radius: 12px;
+  background-color: rgba(201, 167, 169, 0.469);
+  color: rgb(91, 23, 23);
+  padding: 15px 32px;
+  text-align: center;
+  font-family: fantasy;
+  text-decoration:wavy;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px 2px;
+  cursor:pointer;
+  transition-timing-function: ease;
+}
+
+.button5:hover {
+  border: none;
+  border-radius: 12px;
+  background-color: rgba(201, 167, 169, 0.469);
+  color: rgb(91, 23, 23);
+  padding: 15px 32px;
+  text-align: center;
+  font-family: fantasy;
+  text-decoration:wavy;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor:pointer;
+  transition-timing-function: ease;
+}
+#done {
   margin: 5;
   padding: 5;
-  color:rgb(8, 100, 59)
+  /* color:rgb(8, 100, 59) */
+  text-align: center;
+  font-family: fantasy;
+  border: none;
+  border-radius: 12px;
+  background-color: rgba(201, 167, 169, 0.469);
+  color: rgb(91, 23, 23);
+  padding: 15px 32px;
+  text-align: center;
+  font-family: fantasy;
+  text-decoration:wavy;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor:pointer;
+
+}
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: none;
+  color:rgb(80, 45, 15);
+  position: fixed;
+  margin-top: -380px;
+  padding: 10px 10px 0px 10px;
+  clear: both;
+  width: 100%;
+  bottom: 0;
 }
 #root {
   font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
@@ -34,7 +112,7 @@ p {
   margin: 0 auto;
 }
 
-h1 {
+header {
   font-family: fantasy;
   font-size: 50pt;
   color: rgb(80, 45, 15);
