@@ -39,49 +39,69 @@ const App = () => {
           Game over! Your score is: {score} out of {questions.length}!
         </p>
         <p>Would you like to play again?</p>
-        <button class="button5" onClick={() => {console.log('play again clicked!'); setEndGame(false); setPlayAgain(true); setQuestions([]); setScore(0)}}>Play Again</button>
+        <button
+          class="button5"
+          onClick={() => {
+            console.log("play again clicked!");
+            setEndGame(false);
+            setPlayAgain(true);
+            setQuestions([]);
+            setScore(0);
+          }}
+        >
+          Play Again
+        </button>
       </div>
     );
   }
-  if (score === 0 && playAgain || endGame === false) {
-  return (
-  
-    // Ternary operator syntax
-    // condition ? what to do if true : what to do if false
-    <div id="container">
-<p>To test your knowledge of randomly random things, please choose a category below...at random...</p>
-  
-      {questions.length > 0 ? (
-        <div>
-          <p>The following statements are either 'true' or 'false'...</p>
-          
-          {questions.map((question, idx) => {
-            return (
-              <Question
-                key={idx}
-                question={question}
-                setScore={setScore}
-                score={score}
-              />
-            );
-          })}
-          <button class="button" onClick={() => setEndGame(true)}>Finish Game</button>
-        </div>
-      ) : (
-        categories.map((category) => {
-          return (
-            <CategorySelect
-              key={category.id}
-              category={category}
-              setSelected={setSelected}
-            />
-          );
-          
-        })
-      )}
-    </div>
-  )};
-  return null
+  if ((score === 0 && playAgain) || endGame === false) {
+    return (
+      // Ternary operator syntax
+      // condition ? what to do if true : what to do if false
+      <div id="container">
+        {questions.length > 0 ? (
+          <div className="cat-container-all">
+            <p>The following statements are either 'true' or 'false'...</p>
+<div className="cat-container">
+            {questions.map((question, idx) => {
+              return (
+                <Question
+                  key={idx}
+                  question={question}
+                  setScore={setScore}
+                  score={score}
+                />
+              );
+            })}
+            </div>
+            <button className="button" onClick={() => setEndGame(true)}>
+              Finish Game
+            </button>
+          </div>
+        ) : (
+          <div className="cat-container-all">
+            <p>
+              To test your knowledge of randomly random things, 
+              please choose a category below...at random...
+            </p>
+
+            <div className="cat-container">
+              {categories.map((category) => {
+                return (
+                  <CategorySelect
+                    key={category.id}
+                    category={category}
+                    setSelected={setSelected}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+  return null;
 };
 
 export default App;
